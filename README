@@ -2,3 +2,17 @@ email2server.php
 ================
 
 Daemon that allows you to email files directly to your sever.
+
+Open up email2server.php in your favorite text editor and configure the define for DOCROOT, this is where files emailed to your server will be stored.
+
+Requirements:
+1, domain configured with an MX record pointing to your server.
+2, linux (tested on Archlinux)
+3, open_basedir in php.ini configuring to include your DOCROOT if you use it.
+4, posix and mailparse modules (install mailparse with: `pecl install mailparse`)
+
+To run:
+./email2server.php
+
+To stop:
+killall email2server.php
